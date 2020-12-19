@@ -1,10 +1,9 @@
 from tkinter import *
 from tkinter import messagebox
-import keyboard
 
-calculator = Tk()
-calculator.title("Kalkulator v.0.1")
-calculator.resizable(0, 0)
+calc = Tk()
+calc.title("Kalkulator v.0.1")
+calc.resizable(0, 0)
 
 class Application(Frame):
     def __init__(self, master, *args, **kwargs):
@@ -18,7 +17,7 @@ class Application(Frame):
             self.result = eval(self.calculation)
             self.Replace(self.result)
         except:
-            messagebox.showinfo("Error", "Invalid input")
+            messagebox.showinfo("Błąd!", "Wprowadzono nieprawidłowe dane!")
 
     def Replace(self, text):
         self.display.delete(0, END)
@@ -104,6 +103,6 @@ class Application(Frame):
         self.Divide.grid(row=4, column=3, sticky="NWNESWSE")
 
 
-app = Application(calculator).grid()
+app = Application(calc).grid()
 
-calculator.mainloop()
+calc.mainloop()
